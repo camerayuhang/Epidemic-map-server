@@ -2,7 +2,7 @@
  * @Author: camerayuhang
  * @Date: 2022-12-04 22:22:08
  * @LastEditors: camerayuhang
- * @LastEditTime: 2022-12-04 22:22:29
+ * @LastEditTime: 2022-12-15 18:30:39
  * @FilePath: /postgresql/src/main/java/cn/camerayuhang/spring/jpa/postgresql/payload/request/LoginRequest.java
  * @Description: 
  * 

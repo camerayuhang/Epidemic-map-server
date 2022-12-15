@@ -2,7 +2,7 @@
  * @Author: camerayuhang
  * @Date: 2022-12-03 21:59:02
  * @LastEditors: camerayuhang
- * @LastEditTime: 2022-12-06 15:24:58
+ * @LastEditTime: 2022-12-14 23:02:57
  * @FilePath: /postgresql/src/main/java/cn/camerayuhang/spring/jpa/postgresql/security/WebSecurityConfig.java
  * @Description: 
  * 
@@ -68,6 +68,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests().antMatchers("/api/auth/**").permitAll()
         .antMatchers("/api/test/**").permitAll()
         .antMatchers("/api/tut/**").permitAll()
+        .antMatchers("/api/epidemic/**").permitAll()
         .anyRequest().authenticated();
 
     // reference to the same bean, beacuse this method returns a singleton

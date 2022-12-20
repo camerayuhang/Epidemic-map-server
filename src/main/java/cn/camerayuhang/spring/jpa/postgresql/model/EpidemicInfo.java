@@ -2,8 +2,12 @@ package cn.camerayuhang.spring.jpa.postgresql.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-import java.sql.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -51,16 +55,38 @@ public class EpidemicInfo {
   private String country;
 
   @Column(name = "date")
+  @Temporal(TemporalType.DATE)
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   private Date date;
 
   @Column(name = "city")
   private String city;
 
   @Column(name = "longitude")
-  private Long longitude;
+  private Double longitude;
 
   @Column(name = "latitude")
-  private Long latitude;
+  private Double latitude;
+
+  public EpidemicInfo(Long id, Date date, Long confirmed, Long deaths, Long recovered, Long active_cases,
+      Long daily_new_cases,
+      Long daily_new_deaths, Long daily_new_recovered, String province, String country, Long daily_new_asymptomatic,
+      Long daily_new_local_cases, Long daily_new_imported_cases) {
+    this.id = id;
+    this.date = date;
+    this.confirmed = confirmed;
+    this.deaths = deaths;
+    this.recovered = recovered;
+    this.active_cases = active_cases;
+    this.daily_new_cases = daily_new_cases;
+    this.daily_new_deaths = daily_new_deaths;
+    this.daily_new_recovered = daily_new_recovered;
+    this.province = province;
+    this.country = country;
+    this.daily_new_asymptomatic = daily_new_asymptomatic;
+    this.daily_new_local_cases = daily_new_local_cases;
+    this.daily_new_imported_cases = daily_new_imported_cases;
+  }
 
   public EpidemicInfo() {
   }
@@ -185,19 +211,19 @@ public class EpidemicInfo {
     this.city = city;
   }
 
-  public Long getLongitude() {
+  public Double getLongitude() {
     return longitude;
   }
 
-  public void setLongitude(Long longitude) {
+  public void setLongitude(Double longitude) {
     this.longitude = longitude;
   }
 
-  public Long getLatitude() {
+  public Double getLatitude() {
     return latitude;
   }
 
-  public void setLatitude(Long latitude) {
+  public void setLatitude(Double latitude) {
     this.latitude = latitude;
   }
 

@@ -2,7 +2,7 @@
  * @Author: camerayuhang
  * @Date: 2022-12-14 22:17:51
  * @LastEditors: camerayuhang
- * @LastEditTime: 2022-12-19 16:54:39
+ * @LastEditTime: 2022-12-21 19:39:43
  * @FilePath: /postgresql/src/main/java/cn/camerayuhang/spring/jpa/postgresql/controller/EpidemicInfoController.java
  * @Description: 
  * 
@@ -40,6 +40,9 @@ public class EpidemicInfoController {
   @GetMapping("/infos")
   public ResponseEntity<List<EpidemicInfo>> getEpidemicInfoByConditioon(EpidemicInfo probe) {
     try {
+      if (("全国").equals(probe.getProvince())) {
+        probe.setProvince(null);
+      }
       List<EpidemicInfo> infoList = new ArrayList<>();
       ExampleMatcher matcher = ExampleMatcher.matching().withIgnoreNullValues();
       Example<EpidemicInfo> example = Example.of(probe, matcher);

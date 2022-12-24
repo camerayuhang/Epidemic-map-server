@@ -2,7 +2,7 @@
  * @Author: camerayuhang
  * @Date: 2022-12-14 22:17:51
  * @LastEditors: camerayuhang
- * @LastEditTime: 2022-12-21 19:39:43
+ * @LastEditTime: 2022-12-24 20:32:14
  * @FilePath: /postgresql/src/main/java/cn/camerayuhang/spring/jpa/postgresql/controller/EpidemicInfoController.java
  * @Description: 
  * 
